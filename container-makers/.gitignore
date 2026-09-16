@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+.env
+.venv/
+venv/
+env/
+
+.pytest_cache/
+
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+*.db
+*.sqlite3
+
+# Configuracoes locais de ferramentas de agente
+.claude/settings.local.json

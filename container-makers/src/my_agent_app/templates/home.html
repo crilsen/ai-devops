@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Hello World - My Agent App{% endblock %}
+
+{% block content %}
+<div class="empty-state">
+    <h2 style="margin-bottom: 1rem; font-size: 2.5rem; color: #e2e8f0;">Hello World</h2>
+    <p>Sua aplicacao web com agente de IA esta rodando.</p>
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+        <a href="/api/hello" class="btn btn-primary">GET /api/hello</a>
+        <a href="/docs" class="btn btn-secondary">API Docs</a>
+    </div>
+</div>
+{% endblock %}
