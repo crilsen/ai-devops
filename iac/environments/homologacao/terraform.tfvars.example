@@ -1,0 +1,22 @@
+# Copie para terraform.tfvars e preencha com valores não sensíveis do ambiente "homologacao".
+
+project_name = "devops-com-ia"
+aws_region   = "us-east-1"
+
+vpc_cidr              = "10.10.0.0/16"
+az_count              = 2
+public_subnet_cidrs  = ["10.10.0.0/24", "10.10.1.0/24"]
+private_subnet_cidrs = ["10.10.10.0/24", "10.10.11.0/24"]
+
+kubernetes_version      = "1.37"
+endpoint_private_access = true
+
+# Além de quem roda o apply (que já recebe acesso automático), liste aqui
+# outros ARNs IAM que devem ter acesso de admin ao cluster:
+# admin_principal_arns = ["arn:aws:iam::206765900626:user/exemplo"]
+admin_principal_arns = []
+
+node_instance_types = ["t3.large"]
+node_desired_size   = 2
+node_min_size       = 2
+node_max_size       = 4

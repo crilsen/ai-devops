@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "brainstorm": {
+      "source": "fabricioveronez/harness-publico",
+      "sourceType": "github",
+      "skillPath": "plugins/uso-geral/skills/brainstorm/SKILL.md",
+      "computedHash": "bca161285da13f348e75253babe8bc9dbf93e4ecc1f8bc08190142f42dcfa7e0"
+    },
+    "escrever-trd": {
+      "source": "fabricioveronez/harness-publico",
+      "sourceType": "github",
+      "skillPath": "plugins/spec-driven-development/skills/escrever-trd/SKILL.md",
+      "computedHash": "1e2f091eb4b947fd39791325e8416760b7874f8a692823735d8cd3df7906a00b"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/skill-creator/SKILL.md",
+      "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2"
+    },
+    "terraform-style-guide": {
+      "source": "hashicorp/agent-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/terraform/skills/terraform-style-guide/SKILL.md",
+      "computedHash": "3b914c5ae01a7101d45b5222fbc38e0be6eb7412deba5f54d471905f22af70c6"
+    },
+    "terraform-test": {
+      "source": "hashicorp/agent-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/terraform/skills/terraform-test/SKILL.md",
+      "computedHash": "2d69da79a8e714dbdfee4c9a6b323cf33cef89e6b6dcee154d6b3009814c7240"
+    }
+  }
+}

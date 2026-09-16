@@ -1,0 +1,36 @@
+# Convenções deste projeto Terraform
+
+Este projeto segue o padrão `terraform-boas-praticas`. Resumo das regras aplicadas aqui — se você é um agente (ou pessoa) trabalhando neste repo sem essa skill carregada, siga isto:
+
+## Estrutura
+
+- `modules/`: módulos próprios, reutilizáveis entre projetos. **Nunca** módulos de comunidade/registry de terceiros.
+- `environments/{dev,homologacao,producao}/`: um root module por ambiente, cada um compõe módulos de `modules/`. Separação por pasta — **nunca** `terraform workspace`.
+
+## Versionamento
+
+- Terraform e provider(s) travados com `=` na versão mais recente disponível no momento da criação (ou do último bump deliberado) deste projeto — ver `versions.tf` de cada ambiente. Atualizar versão é sempre uma ação deliberada, nunca automática.
+
+## Módulos
+
+- Cada módulo é autocontido: `main.tf`, `variables.tf`, `outputs.tf`, `versions.tf`, `README.md`.
+- Sem valores hardcoded — tudo parametrizado via `variables.tf`.
+- Responsabilidade única por módulo.
+
+## Naming e tagging
+
+- `snake_case` para recursos, variáveis e outputs.
+- Tags mínimas em todo recurso taggable: `environment`, `project`, `managed_by = "terraform"`.
+
+## State
+
+- Backend parcial em `backend.tf` (só o tipo); valores reais em `backend-<ambiente>.hcl`, nunca hardcoded no `.tf`, nunca versionados se contiverem segredo.
+- State sempre remoto — nunca local.
+
+## Execução
+
+- `terraform fmt`, `validate`, `plan` e `init` podem ser rodados livremente.
+- `terraform apply` e `terraform destroy` **nunca são executados automaticamente** — apenas quando solicitados explicitamente pelo usuário, comando a comando.
+
+---
+Gerado pela skill `terraform-boas-praticas`.
