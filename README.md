@@ -28,6 +28,34 @@ O escopo é dividido em dois PRDs por tecnologia:
 - **PRD 002 — Kubernetes**: extensão que gera manifestos Kubernetes a partir do
   mesmo mapeamento do PRD 001 e os valida num cluster local (kind).
 
+## Isso é um IDP?
+
+Parcialmente. O docker-maker tem características de **IDP (Internal Developer
+Platform)**, mas não é um IDP completo.
+
+**O que ele já tem de IDP:**
+
+- **Self-service / golden path** — o dev informa a URL do repositório e recebe um
+  caminho pronto para containerizar, sem escrever os artefatos à mão.
+- **Redução de carga cognitiva** — esconde a parte difícil (descobrir
+  dependências, portas e variáveis): é o "paved road".
+- **Guardrails** — regra de evidência obrigatória, sem `:latest`, sem segredo
+  real nos artefatos e "nunca entregar pior do que havia".
+- **Automação de um trecho do path-to-production** — bootstrap → análise →
+  geração → validação → entrega, com validação independente do agente.
+- **Padronização** — o mesmo mapeamento de dependências alimenta Docker e
+  Kubernetes (PRD 002), evitando divergência entre ambientes.
+
+**O que falta para ser um IDP de fato** (e está fora do escopo dos PRDs, por serem
+MVP/aula): catálogo/portal de serviços, múltiplos golden paths e templates do
+ciclo inteiro, multiusuário com auth/RBAC, provisionamento self-service de
+ambientes integrado, e integração com CI/CD, observabilidade e scorecards.
+
+Resumindo: hoje ele é uma **capacidade de plataforma focada** — uma "golden path
+tool" de containerização com validação real — e um bom **componente** de um IDP,
+não o IDP inteiro. Para a aula, o gancho é tratar o docker-maker como *o primeiro
+golden path* de uma plataforma interna.
+
 ## Estrutura do repositório
 
 ```
